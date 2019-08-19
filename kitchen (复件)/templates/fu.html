@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'tinymce/static/tiny_mce/tiny_mce.js' %}"></script>
+    <script>
+        tinyMCE.init({
+            'mode':'textareas',
+            'width':800,
+            'height':600
+        })
+    </script>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <textarea name="fuw" id=""  cols="30" rows="10"></textarea>
+    <input type="submit">
+</form>
+</body>
+</html>

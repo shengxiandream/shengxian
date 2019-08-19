@@ -1,0 +1,89 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>天天生鲜-用户中心</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="header_con">
+		<div class="header">
+			<div class="welcome fl">欢迎来到天天生鲜修改密码服务中!</div>
+			<div class="fr">
+				{% if request.session.username %}
+                <a href="">欢迎您：{{request.session.username}}</a>
+                {% endif %}
+				<div class="login_btn fl">
+{#					<a href="/app/login/">登录</a>#}
+					<span>|</span>
+{#					<a href="/app/register/">注册</a>#}
+				</div>
+				<div class="user_link fl">
+					<span>|</span>
+					<a href="/app/info/">用户中心</a>
+					<span>|</span>
+					<a href="/app/cart/">我的购物车</a>
+					<span>|</span>
+					<a href="/app/order/">我的订单</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{#	<div class="search_bar clearfix">#}
+{#		<a href="index.html" class="logo fl"><img src="images/logo.png"></a>#}
+{#		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;用户中心</div>#}
+{#		<div class="search_con fr">#}
+{#			<input type="text" class="input_text fl" name="" placeholder="搜索商品">#}
+{#			<input type="button" class="input_btn fr" name="" value="搜索">#}
+{#		</div>#}
+{#	</div>#}
+
+	<div class="main_con clearfix">
+		<div class="left_menu_con clearfix">
+			<h3>用户中心</h3>
+			<ul>
+				<li><a href="/app/info/">· 个人信息</a></li>
+				<li><a href="/app/cart/">· 全部订单</a></li>
+				<li><a href="/app/site/" class="active">· 收货地址</a></li>
+			</ul>
+		</div>
+		<div class="right_content clearfix">
+{#				<h3 class="common_title2">收货地址</h3>#}
+				<h3 class="common_title2">修改个人信息</h3>
+				<div class="site_con">
+					<form action="/app/change/" method="POST">
+                        用户名：{{request.session.username}}
+						<div class="form_group">
+							<label>性别：</label>
+							<input type="text" name="sex">
+						</div>
+                        <div class="form_group">
+							<label>年龄：</label>
+							<input type="text" name="birthday">
+						</div>
+						<div class="form_group form_group2">
+							<label>详细地址：</label>
+							<textarea class="site_area"name="city"></textarea>
+						</div>
+						<div class="form_group">
+							<label>邮编：</label>
+							<input type="text" name="email">
+						</div>
+						<div class="form_group">
+							<label>手机：</label>
+							<input type="text" name="phone">
+						</div>
+
+						<input type="submit" name="" value="提交" class="info_submit">
+					</form>
+				</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

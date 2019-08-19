@@ -1,0 +1,43 @@
+
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>天天生鲜-提示</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+    <div class="text">
+        <font size="50">修改成功</font>
+    </div>
+
+
+	<div class="register_con">
+		<div class="l_con fl">
+			<a class="reg_logo"><img src="{% static 'assets/img/logo1.png' %}"></a>
+			<div class="reg_slogan">足不出户  ·  新鲜每一天</div>
+			<div class="reg_banner"></div>
+		</div>
+    <div id="wp" class="wp">
+	<div id="ct" class="wp cl w">
+		<div class="nfl">
+			<div class="f_c altw">
+                <ul>
+				<div id="messagetext" class="alert_error">
+				<p><font color=red><b>{{ a }}</b></font>，请稍候…… <br />
+				<script type="text/javascript" reload="1">setTimeout("location.href='/app/info/';", 2000);</script></p>
+				<p class="alert_btnleft"><a href="/app/info/">如果你的浏览器没有自动跳转，请点击此链接</a></p>
+				</div>
+                </ul>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

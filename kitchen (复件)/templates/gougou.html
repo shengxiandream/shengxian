@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery1.11.3/jquery.js"></script>
+</head>
+<body>
+<form action="/app/gougou/" method="post" id="d1">
+    {% csrf_token %}
+    <button goodsid="{{ good.id }}" class="subshopping">-</button>
+<span>0</span>
+<button goodsid="{{ good.id }}" class="addshopping">+</button>
+    <input type="submit" name="" value="提交" class="info_submit">
+
+</form>
+</body>
+</html>
+<script>
+    $('button').click(function (ev) {
+        ev.preventDefault()
+        $.post("{% url 'app:send' %}",$('#d1').serialize())
+
+    })
+</script>
